@@ -3,7 +3,7 @@
 This project consists of 10 Milestone. Each milestone demonstrates different aspects of importing, manipulating and visualising data using Microsoft Power BI. 
 
 ### Table of Contents
-1. [Import the Data](#Import the Data)
+1. [Import the Data](#import-the-data)
 
 
 ## Import the Data
