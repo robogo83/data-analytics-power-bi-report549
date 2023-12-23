@@ -33,36 +33,46 @@ First step of this stage was to create Date table with the following columns:
 
 Having all the tables prepared, I have checked if all relationship in the Power BI model view are correct to form star schema data model. The model can be seen on the image below
 
+![Data_Model](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/6affcd37-ba6f-48ae-a463-b93e19118ede)
 
 Seperate Measure table has been created to hold all the measures that will be used for data analysis. Following measures have been ceated using DAX:
-Total Orders
-
-Total Revenue
-
-Total Profit
-
-Total Customers
-
-Total Quantity
-
-Profit YTD
-
-Revenue YTD
+**Total Orders**
+```
+Total Orders = COUNT(Orders[Order Date])
+```
+**Total Revenue**
+```
+Total Revenue = SUMX(Orders, Orders[Product Quantity] * RELATED(Products[Sale Price]))
+```
+**Total Profit**
+```
+Total Profit = SUMX(Orders, (RELATED(Products[Sale Price]) - RELATED(Products[Cost Price]) * (Orders[Product Quantity])))
+```
+**Total Customers**
+```
+Total Customers = DISTINCTCOUNT(Orders[User ID])
+```
+**Total Quantity**
+```
+Total Quantity = SUMX(Orders, [Product Quantity]) 
+```
+**Profit YTD**
+```
+Profit YTD = TOTALYTD([Total Profit], Orders[Order Date]) 
+```
+**Revenue YTD**
+```
+Revenue YTD = TOTALYTD([Total Revenue], Orders[Order Date])
+```
 
 The last step at this stage was to create hierachies to allow to drill down into the data and perform data analysis. The following hierarchies have been created within our tables.
 
-1. Date hierarchy with the following levels: 
+1. **Date hierarchy** with the following levels: 
 
-Start of Year
-Start of Quarter
-Start of Month
-Start of Week
-Date 
+***Start of Year -> Start of Quarter -> Start of Month -> Start of Week -> Date***
 
-2. Geography hierarchy with the following levels: 
+3. **Geography hierarchy** with the following levels: 
 
-World Region
-Country
-Country Region 
+***World Region -> Country -> Country Region***
 
 To create geography hierarchy some additional data transformation was necessary, such as creating calculated columns; Country, Geography; and assign these columns correct data category.
