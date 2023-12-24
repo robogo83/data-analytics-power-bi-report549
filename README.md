@@ -5,7 +5,7 @@ This project consists of 10 Milestone. Each milestone demonstrates different asp
 ### Table of Contents
 1. [Import the Data](#import-the-data)
 2. [Data Model](#data-model)
-3. [Customer Detail Report Page](#customer-detail)
+3. [Customer Detail Report Page](#customer-detail-report-page)
 
 
 ## Import the Data
