@@ -6,6 +6,7 @@ This project consists of 10 Milestone. Each milestone demonstrates different asp
 1. [Import the Data](#import-the-data)
 2. [Data Model](#data-model)
 3. [Customer Detail Report Page](#customer-detail-report-page)
+4. [Executive Summary Report Page](#executive-summary-report-page)
 
 
 ## Import the Data
@@ -129,4 +130,46 @@ Last but not least, between slicer has been used to add an option to filter the 
 On the screenshot below, the final result of the report can be seen including the layout. 
 
 ![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/b3b972f6-2e20-472a-8b6e-6c6921db7058)
+
+## Executive Summary Report Page
+
+The purpose of this page is to provide high-level executive data analysis summary. As part of this summary a report with the following visualisations have been created.
+
+### Cards
+
+Three cards to visualise **Total Revenue**, **Total Orders**, **Total Profit**. For these cards respective measures have been used that have been created in the early stages of the data preparation have been created.
+
+## Donut
+
+Two donuts visualisations to compare revenue by store and country. This has been achieved using filtering feature in the Power BI.
+
+### Line graph
+
+As in the Customer Detail Page, this graph uses Power BI drill down feature to visualise total revenue using different time periods (Years, Quarters, Months).
+
+### Clustered bar chart
+
+This bar chart visualise total orders by product category on y-axis. 
+
+### KPI
+
+The new type of a visualistion, compared to Customer report page, are three KPI reports. These reports display quarterly revenue, orders and profit. The advantage of KPI reports is that they an display three vital information; value, trend and target. Since in this case, the intention is to provide a quarter comparison. The trend has been used as Start of Quarter (from our Date table), and for the target, the Previous Quarter Profit, Revenue and Orders have been used. To achieve this Power BI PREVIOUSQUARTER function has been used. DAX formula for these three new measures:
+
+```
+Previous Quarter Orders = CALCULATE([Total Orders], PREVIOUSQUARTER(Orders[Order Date]))
+```
+
+```
+Previous Quarter Profit = CALCULATE([Total Profit], PREVIOUSQUARTER(Orders[Order Date]))
+```
+
+```
+Previous Quarter Revenue = CALCULATE([Total Revenue], PREVIOUSQUARTER(Orders[Order Date]))
+```
+
+### Final result
+
+Below, you can see a screenshot of the final design of the executive summary report page.
+
+![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/6dd89976-80ae-418e-9fe4-a38000bc3485)
 
