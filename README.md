@@ -7,6 +7,7 @@ This project consists of 10 Milestone. Each milestone demonstrates different asp
 2. [Data Model](#data-model)
 3. [Customer Detail Report Page](#customer-detail-report-page)
 4. [Executive Summary Report Page](#executive-summary-report-page)
+5. [Product Detail Report Page](#product-detail-report-page)
 
 
 ## Import the Data
@@ -173,3 +174,61 @@ Below, you can see a screenshot of the final design of the executive summary rep
 
 ![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/6dd89976-80ae-418e-9fe4-a38000bc3485)
 
+## Product Detail Report Page
+
+The purpose of this page is to provide an in-depth look of how the individual products are performing. As part of this report page the following visualisation have been created
+
+### Gauge
+
+Three gauges displaying Quarterly Orders, Revenue and Profit comparing the the Quarterly Target. The gauges used new measures that have been created for this purposes. Their DAX formulas can be seen below
+
+```
+Current Quarter Orders = CALCULATE([Total Orders], DATESQTD(Orders[Order Date]))
+Target Quarter Orders = CALCULATE([Current Quarter Orders] * 1.10)
+```
+
+```
+Current Quarter Revenue = CALCULATE([Total Revenue], DATESQTD(Orders[Order Date]))
+Target Quarter Revenue = CALCULATE([Current Quarter Revenue] * 1.10)
+```
+
+```
+Current Quarter Profit = CALCULATE([Total Profit], DATESQTD(Orders[Order Date]))
+Target Quarter Profit = CALCULATE([Current Quarter Profit] * 1.10)
+```
+
+Additional conditional formating have been used to display the values in red if the target has not been met.
+
+### Area chart
+
+Area chart displaying how different products are performing over time with regards to the revenue using Dates column, Total Revenue measure and Products Category column.
+
+### Table
+
+A new table has been created to display all the products alongside their related revenue, total number of customers who bought the product, total orders and profit per order. Profit per order values have been calculated from already existed measures:
+
+```
+Profit per Order = [Total Profit] / [Total Orders]
+```
+
+### Scatter plot
+
+To visualise and compare best to the worst selling products, scatter plot has been used, where profit per item and product quantity of each product category has been plotted. Profit per item is a new calculated column created within the Products table
+
+```
+Profit per Item = [Sale Price] - [Cost Price]
+```
+
+### Slicers
+
+For the user to be able to filter the data in all the visualisations, two new slicers have been added. One to filter product category and one for the country. The slicers have been implemented so that the user is able to select multiple product categories but only one country. However, all countries can be selected using Select All tick box within the Country slicers.
+
+#### Filtering side bar
+
+These slicers have been implemented as a hidden feature and the user can bring them up using Filter icon in the navigation side bar. To achieve this, Bookmarks pane have been used to record current state of the page. Clickig the filter icon will bring the two slicers inside a rectangle and back button (these elements are grouped together using Selection pane). Once the filter is selected the user can click the back button to hide the filter side bar.
+
+### Final result
+
+![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/8b9ea0cf-f413-43fb-be9c-e20f4d3d754f)
+
+![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/d2bdc55e-0adf-4f23-81a9-bc1d1b253e54)
