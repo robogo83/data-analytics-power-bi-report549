@@ -8,6 +8,7 @@ This project consists of 10 Milestone. Each milestone demonstrates different asp
 3. [Customer Detail Report Page](#customer-detail-report-page)
 4. [Executive Summary Report Page](#executive-summary-report-page)
 5. [Product Detail Report Page](#product-detail-report-page)
+6. [Stores Map Report Page](#stores-map-report-page)
 
 
 ## Import the Data
@@ -232,3 +233,65 @@ These slicers have been implemented as a hidden feature and the user can bring t
 ![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/8b9ea0cf-f413-43fb-be9c-e20f4d3d754f)
 
 ![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/d2bdc55e-0adf-4f23-81a9-bc1d1b253e54)
+
+## Stores Map Report Page
+
+The purpose of this report page is to display a map with all the stores and be able to filter out the most profitable one and wheather they meet the quarterly set revenue and profit targets.
+
+### Map
+
+The page consist of a map visual with the Geographical hierarchy as the location and the bubble size as the Profit YTD measure. This allows to see locations with the highest profit when the user zooms in. 
+
+### Slicer
+
+Tile slicer has been setup for being able to filter the map by three countries and additional option to allow select all countries.
+
+### Stores Drillthrough Page
+
+To be able to see a progress of a given store a new stores drillthrough report page has been created with five additional visuals. The page has been set as a Drillthrough page with allowing drillthrough when used as a category.
+
+#### Table
+
+Displaying five top products with the Product description, Profit YTD, Total Orders and Total Revenue columns.
+
+#### Column Chart
+
+Viualising number of Total Orders ordered by product category
+
+#### Gauges
+
+Two new gauges, one for Profit YTD and one for Revenue YTD with the target set to 20 % year-on-year growth vs the same period in the last year. This required setting up two new measures.
+
+```
+Profit Goal = CALCULATE([Profit YTD] * 1.20, SAMEPERIODLASTYEAR(Dates[Date]))
+Revenue Goal = CALCULATE([Revenue YTD] * 1.20, SAMEPERIODLASTYEAR(Dates[Date]))
+```
+
+### Stores Tooltip Page
+
+The last step was to create a new tooltip page in order to be able to see each store's year-to-date profit performance against the profit target only by hovering over over a store. The profit gauge visual was from the Stores Drillthrough Page was copied over and the visual tooltip was set to the Tooltip page just created. This was achieved by allowing the newly created page to be used as a tooltip in the Format pane and then use in the Tooltip of the visual. 
+
+### Final Results
+
+**Stores Map**
+![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/9c496d96-3987-48ca-a154-3e4e56a42398)
+
+**Stores Drillthrough Page**
+![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/2464fc81-6f31-4f47-84b4-cfd13b3ba01f)
+
+**Tooltip Page**
+![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/48f8b789-7367-4d7a-9044-a7eba2581f20)
+
+**Setting Tooltip for the Gauge Visual**
+![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/470de681-f72b-4c7e-bbc8-5344af2fd175)
+
+
+
+
+
+
+
+
+
+
+
