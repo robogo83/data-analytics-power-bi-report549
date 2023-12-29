@@ -269,8 +269,7 @@ Revenue Goal = CALCULATE([Revenue YTD] * 1.20, SAMEPERIODLASTYEAR(Dates[Date]))
 
 ### Stores Tooltip Page
 
-The last step was to create a new tooltip page in order to be able to see each store's year-to-date profit performance against the profit target only by hovering over over a store. The profit gauge visual was from the Stores Drillthrough Page was copied over and the visual tooltip was set to the Tooltip page just created. This was achieved by allowing the newly created page to be used as a tooltip in the Format pane and then use in the Tooltip of the visual. 
-
+The last step was to create a new tooltip page in order to be able to see each store's year-to-date profit performance against the profit target only by hovering over over a store. The profit gauge visual from the Stores Drillthrough Page was copied over and the page was set as a tooltip page. This allows the newly created page to be used as a tooltip. Finally, the Stores Map Page Tooltip was set to the newly created Tooltip page which got the final result of hovering over the stores and seeing the gauge visual.
 ### Final Results
 
 **Stores Map**
@@ -282,8 +281,9 @@ The last step was to create a new tooltip page in order to be able to see each s
 **Tooltip Page**
 ![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/48f8b789-7367-4d7a-9044-a7eba2581f20)
 
-**Setting Tooltip for the Gauge Visual**
-![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/470de681-f72b-4c7e-bbc8-5344af2fd175)
+**Setting Tooltip for the Map Page**
+![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/d112496d-b7b1-49de-93fa-f6156ae8981e)
+
 
 
 
