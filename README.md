@@ -9,6 +9,7 @@ This project consists of 10 Milestone. Each milestone demonstrates different asp
 4. [Executive Summary Report Page](#executive-summary-report-page)
 5. [Product Detail Report Page](#product-detail-report-page)
 6. [Stores Map Report Page](#stores-map-report-page)
+7. [Cross Filtering and Navigation](#cross-filtering-and-navigation)
 
 
 ## Import the Data
@@ -283,6 +284,41 @@ The last step was to create a new tooltip page in order to be able to see each s
 
 **Setting Tooltip for the Map Page**
 ![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/d112496d-b7b1-49de-93fa-f6156ae8981e)
+
+## Cross Filtering and Navigation
+
+The last touch for the report was to sort out the cross-filtering of the visuals. Power BI uses cross-filtering as default and since it is not required for some of the visuals filter some other visuals, it is needed to edit their interactions. This can be achieved using Edit Interaction feature in the Format tab ribbon. This feature allows to switch on and of cross-filtering and highliting. The third option is to use no filter which is used in the case if it is not needed one visual to have any affect on the other.
+
+<ins>**The follwing filtering has been changed**:</ins>
+
+1. Product Category Bar Chart in **Executive Summary** page does not affect card visuals and KPI.
+2. Top 20 Customers table in **Customer Detail** page does not affect any other visuals.
+3. Total Customers by Product in the same page does not affect Line Graph in the **Customers Detail** page.
+4. Total Customers by Country was set to cross-filter Total Customers by Product donut visual.
+5. In the **Product Detail** page the scatter plot does not have any affect on any other visuals.
+
+<ins>**Navigation side bar**</ins>
+
+For each report page custome images have been added for easier navigation between pages. Each icon has a custome white image added and in the Format pane the image is set to a different color on hover. And an appropriate page has been assigned as the destination.
+
+### Final result
+
+**Edit interactions** example
+
+![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/e0ebc262-ca47-4c78-9d3a-a78fe0383ff7)
+
+**Side bar navigation** example
+
+*Setting custome image on hovering*
+
+![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/8ccc1d03-1680-4ce6-a751-8263aab1b866)
+
+![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/969f4329-eb79-42ea-8f32-d2e18e6370d4)
+
+*Setting Action to the appropriate page*
+
+![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/cac2f276-57cb-49e4-aa4b-15345b85624d)
+
 
 
 
