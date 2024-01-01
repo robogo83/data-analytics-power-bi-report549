@@ -10,6 +10,7 @@ This project consists of 10 Milestone. Each milestone demonstrates different asp
 5. [Product Detail Report Page](#product-detail-report-page)
 6. [Stores Map Report Page](#stores-map-report-page)
 7. [Cross Filtering and Navigation](#cross-filtering-and-navigation)
+8. [SQL Analysis](#sql-analysis)
 
 
 ## Import the Data
@@ -319,6 +320,18 @@ For each report page custome images have been added for easier navigation betwee
 
 ![image](https://github.com/robogo83/data-analytics-power-bi-report549/assets/45542109/cac2f276-57cb-49e4-aa4b-15345b85624d)
 
+## SQL Analysis
+
+As a part of this project, some basic SQL analysis has been conducted. This is important to provide data analysis for all the users who do not have access to tools such as Microsoft Power BI. As part of the analysis 5 questions have been answered using postgresql queries. First step was to connect to the sql server using **VS Code** and its **SQL Tools** extension. After connecting, the list of tables and columns in the orders-db database have been saved in the csv files.
+
+After connecting to the database the following questions have been answered using SQL queries:
+1. How many staff are there in all of the UK stores?
+2. Which month in 2022 has had the highest revenue?
+3. Which German store type had the highest revenue for 2022?
+4. Create a view where the rows are the store types and the columns are the total sales, percentage of total sales and the count of orders.
+5. Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
+
+The results of the queries have been exported and saved as CSV files and uploaded to this github repository.
 
 
 
